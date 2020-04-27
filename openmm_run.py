@@ -68,7 +68,7 @@ integrator = LangevinIntegrator(inputs.temp*kelvin, inputs.fric_coeff/picosecond
 
 # Set platform
 platform = Platform.getPlatformByName('CUDA')
-prop = dict(CudaPrecision='single')
+prop = dict(CudaDeviceIndex='0', CudaPrecision='single')
 
 # Build simulation context
 simulation = Simulation(psf.topology, system, integrator, platform, prop)
